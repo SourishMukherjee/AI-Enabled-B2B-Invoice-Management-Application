@@ -1,0 +1,290 @@
+html{
+    height:100%;
+}
+body {
+        background: transparent radial-gradient(closest-side at 50% 50%, 
+               #58687E 0%, #39495E 100%) 0% 0% no-repeat padding-box;
+        font-family: Ubuntu;
+}
+
+.img1{
+    position:fixed;
+    top: 22px;
+    left: 565px; /*42vw*/
+    width: 230px;
+    height: 40px;
+}
+
+.img2{
+    position:fixed; 
+    top: 20px; 
+    left: 30px; /*2vw*/
+    width: 230px; /*233*/
+    height: 48px; /*52*/
+}
+
+.invoice-id{
+    position:fixed;
+    top: 60px;
+	left: 30px;
+	width: 141px;
+	height: 31px;
+	text-align: left;
+	font: normal normal normal 28px/32px Ubuntu;
+	color: #FFFFFF;
+}
+
+.grid-container{
+    position:fixed;
+    top: 140px;
+    left: 30px;
+    width: 1306px;
+    height: 470px;
+    background: #273D49CC 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    display:grid;
+}
+
+.modal-buttons{
+    position:absolute;
+    top:19px;
+    right: 20px;
+    width: 350px;
+    height: 40px;
+}
+
+.modal-buttons button{
+    border: 1px solid #97A1A9;
+    background-color: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #97A1A9;
+    margin-left: 10px ;
+}
+
+.modal-buttons button:enabled {
+    border: 1px solid #14AFF1;
+    color: #fff;
+  }
+
+.add-btn{
+    width: 70px;
+    height: 30px;
+    
+}
+.edit-btn{
+    width: 70px;
+    height: 30px;
+}
+.delete-btn{
+    width: 87px;
+    height: 30px;    
+}
+
+.table{
+    position:absolute;
+    top: 49px;
+    left: 15px;
+    width: 97.7%;
+    height: 370px;
+    background-color: #273D49CC 0% 0% no-repeat padding-box;
+}
+
+.table-head{
+    border-bottom:2px solid #283A46
+}
+
+th{
+    padding: 3px;
+    color: #97A1A9;
+    font-size: 14px;
+    text-align: center;
+}
+td{
+    padding: 3px;
+    color:white;
+    font-size: 16px;    
+    text-align: center;
+}
+
+#GridBody tr:nth-child(even){background-color: #283A46 ;}
+
+input[type="checkbox"] {
+    display: none;
+  }
+
+.sall_check:before {
+    content: url("/images/check_box_outline_blank-black-18dp.svg");
+    position: absolute;
+  }
+:checked+.sall_check:before {
+    content: url("/images/check_box-black-18dp.svg");
+  }
+
+.highlight{
+    background-color: #2A5368
+}
+
+
+.modal{
+    display:none;
+    position:fixed; /* this is the darker part around the pop-up */
+    z-index:1;
+    left:0;
+    top:0;
+    height:100vh;
+    width:100vw;
+    background-color:rgba(0,0,0,0.75);
+}
+
+.add-modal-content,.edit-modal-content,.del-modal-content{
+    position:absolute;
+    background-color: #2A3E4C;
+    top:25%;
+    left:27%;
+    width: 44vw;
+    height: 54.73118vh;
+    border-radius: 6px;
+    opacity:1;
+    padding: 10px 10px;
+}
+
+.header{
+    height:9.78vh; /* positioning w.r.t root */    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+
+/* .add-modal-content,.edit-modal-content,.del-modal-content{
+    height:35.1612vh; /*positioning w.r.t root 
+    box-shadow: 0px 8px 24px #00000029;
+} */
+
+.footer{
+    /*positioning w.r.t root*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+
+/* .input-1 .input-2 .input-3 .input-4 .input-5 .input-6{
+    flex-basis: 100%;
+} */
+
+/* creating a flex box */
+.add-input-content,.edit-input-content,.del-input-content{
+    height:35.1612vh; /*positioning w.r.t root */ 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: Ubuntu;
+    color:#97A1A9; 
+}
+
+/* positioning the close button */
+.closebtn{
+    width: 1.25vw;
+    height: 2.5838vh;
+    cursor: pointer;
+    background:none;
+    border:none;
+    outline: none;
+}
+
+
+/* .modal {    
+    position: fixed; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid grey;
+    border-radius:10px;
+    z-index: 10;
+    width: 500px; 
+    height: 300px; 
+    background-color: #2A3E4Cfe; 
+}
+
+.modal.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+.add-header{
+    padding: 10x 15x;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-header .add-invoice{
+    font-size: 1.25rem;
+    font-weight:bold;
+}
+
+.add-header .close {
+    cursor: pointer;
+    background:none;
+    border:none;
+    outline: none;
+}
+
+.add-form{
+    padding:10x 15x;
+}
+
+#overlay{
+    position:fixed;
+    transition: 200ms ease-in-out;
+    opacity:0;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events:all;
+}
+
+.btn-form{
+    padding: 10x 15x;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}  */
+  
+#pgcount{
+    width: 120px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    left: -150px;
+    position: absolute;
+}  
+
+
+.pagination {
+    display: inline-block;
+  }
+  
+  .pagination button {
+    color: white;
+    background-color: #39495E;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+  }
+  
+  .pagination button:hover:not(.active) {background-color: #14AFF1;}
+
+
+

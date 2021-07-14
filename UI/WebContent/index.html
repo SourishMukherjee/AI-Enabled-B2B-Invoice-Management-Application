@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <script  src="json/index.JSON"></script>  -->
+<script type="text/javascript" src="js/index.js"></script>
+<!-- <script type="text/javascript" src="js/buttons.js"></script> -->
+<title>Highradius</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="fetchtable()">
+	<img class="img1"src="images/logo.svg" > <!-- -->
+	<img class="img2"src="images/Group 20399.svg"  > <!-- -->  
+	<p class="invoice-id">Invoice List</p> 
+	<div class="grid-container">
+		<div class="modal-buttons">
+			<p id="pgcount">page: <span id="page"></span></p>
+			<button  class="add-btn" onclick="openmodaladd()"><img src="images/Path 18189.svg" width="9"/> Add</button>
+			<button class="edit-btn" onclick="openmodaledit()" ><img src="images/Path 18191.svg" width="9"/> Edit</button>
+			<button class="delete-btn" onclick="openmodaldel()" ><img src="images/Path 18189-1.svg" width="9" height="8"/> Delete</button>			
+		</div>
+		<!-- add modal -->
+		<div id="add_modal" class="modal">
+			<div class="add-modal-content">
+				<div class="header">
+					<div class="modlabel">
+						<h2>Add Invoice</h2>
+					</div>
+					<button class="closebtn" onclick="closemodaladd()">
+						<img src="images/baseline-close-24px.svg" alt="close button" class="closebtn">
+					</button>
+				</div>
+				<div class="add-input-content">
+					<div class="a-cust-na">
+						<label>Customer Name</label>
+						<input id="cust_name" type="text">
+					</div>
+					<div class="a-cust-no">
+						<label>Customer No.</label>
+						<input id="cust_no" type="text">
+					</div>
+					<div class="a-in-no">
+						<label>Invoice No.</label>
+						<input id="in_no" type="text">
+					</div>
+					<div class="a-in-amt">
+						<label>Invoice Amount</label>
+						<input id="a_in_amt" type="number">
+					</div>
+					<div class="a-dd">
+						<label>Due Date</label>
+						<input id="dd" type="date">
+					</div>
+					<div class="a-notes">
+						<label>Notes</label>
+						<input id="a_notes" type="text">
+					</div>
+				</div>
+				<div class="footer">
+					<button>Cancel</button>
+					<button>Clear</button>
+					<button onclick="add_data()">Add</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Edit Modal -->
+		<div id="edit_modal" class="modal">
+			<div class="edit-modal-content">
+				<div class="header">
+					<div class="modlabel">
+						<h2>Edit Invoice</h2>
+					</div>
+					<button class="closebtn" onclick="closemodaledit()">
+						<img src="images/baseline-close-24px.svg" alt="close button" class="closebtn">
+					</button>
+				</div>
+				<div class="edit-input-content">
+					
+					<div class="e-in-amt">
+						<label>Invoice Amount</label>
+						<input id="e_in_amt" type="number">
+					</div>
+					<div class="e-notes">
+						<label>Notes</label>
+						<input id="e_notes" type="text">
+					</div>
+				</div>
+				<div class="footer">
+					<button>Cancel</button>
+					<button>Reset</button>
+					<button onclick="edit_data()">Save</button>
+				</div>
+			</div>
+		</div>
+		<!-- Delete Modal -->
+		<div id="del_modal" class="modal">
+			<div class="del-modal-content">
+				<div class="header">
+					<div class="modlabel">
+						<h2>Delete Record(s)?</h2>
+					</div>
+					<button class="closebtn" onclick="closemodaldel()">
+						<img src="images/baseline-close-24px.svg" alt="close button" class="closebtn">
+					</button>
+				</div>
+				<div class="del-input-content">
+					<div class="delwarn">
+						<p> You'll lose your record(s) after this action. We can't recover them once you delete.</p>
+						<br>
+						<p>Are you sure you want to permanently delete them?</p>
+					</div>
+				</div>
+				<div class="footer">
+					<button>Cancel</button>
+					<button>Delete</button>
+				</div>
+			</div>
+		</div>
+		<!-- Dynamic Table -->
+		<div class="table">
+			<div class="pagination">
+				<button id="btn_prev" onclick="prevPage()">❮</button>
+				<button id="btn_next" onclick="nextPage()">❯</button>				
+			</div>
+			<table id="GridTable" style="width:100%;border-collapse: collapse;">
+				<thead id="GridHead"></thead>
+				<tbody id="GridBody"></tbody>				  
+			</table>
+		</div>
+		<!-- <div id="overlay" class="active"></div> onclick="(new showTableOnLoad()).prevPage()" onclick="(new showTableOnLoad()).nextPage()"	 -->
+		
+	</div>
+		
+</body>
+</html>
